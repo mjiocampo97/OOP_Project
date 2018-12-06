@@ -37,6 +37,7 @@ namespace OOP_Project.Classes
         full time
         part time
         bla
+        
          */
 
         public void GetSalary()

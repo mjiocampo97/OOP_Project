@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOP_Project"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:model="clr-namespace:OOP_Project.Classes"
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -25,7 +26,6 @@
         <Grid Grid.Column="0" Grid.Row="0"  DataContext="{Binding Path=PersonModule, Source={StaticResource ViewModelLocator}}">
             <StackPanel>
                 <TextBox>
-
                 </TextBox>
                 <ListBox ItemsSource="{Binding Path=CustomerList}">
                     <ListBox.ItemTemplate>
@@ -47,8 +47,66 @@
                 <TabItem Header="Person Details" FontSize="20">
 
                 </TabItem>
-                <TabItem Header="Products" FontSize="20">
-
+                <TabItem Header="Products" FontSize="20" DataContext="{Binding Path=ProductModule, Source={StaticResource ViewModelLocator}}">
+                    <ListBox ItemsSource="{Binding Path= ProductList}" Margin="3">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel FlowDirection="LeftToRight" MaxWidth="980"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <!--<ListBox.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.ContainerStyle>
+                                    <Style TargetType="{x:Type GroupItem}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type GroupItem}">
+                                                    <Expander Margin="0,0,0,5" Header="{Binding}" IsExpanded="True">
+                                                        <Expander.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <StackPanel>
+                                                                    <TextBlock FontWeight="Bold" Foreground="RoyalBlue" Text="{Binding Path=Name}"></TextBlock>
+                                                                </StackPanel>
+                                                            </DataTemplate>
+                                                        </Expander.HeaderTemplate>
+                                                        <ItemsPresenter Margin="5,0"></ItemsPresenter>
+                                                    </Expander>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </GroupStyle.ContainerStyle>
+                            </GroupStyle>
+                        </ListBox.GroupStyle>-->
+                        <ListBox.Resources>
+                            <DataTemplate DataType="{x:Type model:Necklace}">
+                                <Border BorderBrush="DarkGreen" BorderThickness="4" CornerRadius="2" SnapsToDevicePixels="True" Margin="5" Background="LightSeaGreen">
+                                    <StackPanel Width="150">
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Path=Name}"  FontWeight="Heavy" FontSize="15" FontStyle="Italic"></TextBlock>
+                                            <TextBlock Text="{Binding Path=Price}"></TextBlock>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                            <DataTemplate DataType="{x:Type model:Bracelets}">
+                                <Border BorderBrush="OrangeRed" BorderThickness="4" CornerRadius="2" SnapsToDevicePixels="True" Margin="5" Background="LightCoral">
+                                    <StackPanel Width="170">
+                                        <TextBlock Text="{Binding Path=Name}"  FontWeight="Heavy" FontSize="15" FontStyle="Italic"></TextBlock>
+                                        <TextBlock Text="{Binding Path=Price}"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                            <DataTemplate DataType="{x:Type model:Earrings}">
+                                <Border BorderBrush="Violet" Background="Lavender" BorderThickness="4" CornerRadius="2" SnapsToDevicePixels="True" Margin="5">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Path=Name}"  FontWeight="Heavy" FontSize="15" FontStyle="Italic"></TextBlock>
+                                        <TextBlock Text="{Binding Path=Price}"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.Resources>
+                    </ListBox>
                 </TabItem>
             </TabControl>
         </Grid>
