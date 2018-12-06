@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GalaSoft.MvvmLight;
 
-namespace OOP_Project.Classes
+namespace OOP_Project.Module
 {
-    public class Product : ObservableObject
+    public class ProductModule
     {
-
     }
 }
