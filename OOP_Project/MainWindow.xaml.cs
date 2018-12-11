@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using OOP_Project.Classes;
+using OOP_Project.Module;
 
 namespace OOP_Project
 {
@@ -20,11 +22,13 @@ namespace OOP_Project
     /// </summary>
     public partial class MainWindow : Window
     {
+        public PersonModule PersonModule { get; set; }
         public MainWindow()
         {
             InitializeComponent();
         }
 
-       
+
+        
     }
 }

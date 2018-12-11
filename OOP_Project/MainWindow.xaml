@@ -48,7 +48,7 @@
 
                 </TabItem>
                 <TabItem Header="Products" FontSize="20" DataContext="{Binding Path=ProductModule, Source={StaticResource ViewModelLocator}}">
-                    <ListBox ItemsSource="{Binding Path= ProductList}" Margin="3">
+                    <ListBox ItemsSource="{Binding Path= ProductList}" Margin="3" Name="ProductListBox">
                         <ListBox.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel FlowDirection="LeftToRight" MaxWidth="980"/>
@@ -105,8 +105,19 @@
                                     </StackPanel>
                                 </Border>
                             </DataTemplate>
+                            <DataTemplate DataType="{x:Type model:Rings}">
+                                <Border BorderBrush="Gold" BorderThickness="4" CornerRadius="4" SnapsToDevicePixels="True" Margin="5" Background="Khaki">
+                                    <StackPanel Width="170">
+                                        <TextBlock Text="{Binding Path=Name}"  FontWeight="Heavy" FontSize="15" FontStyle="Italic"></TextBlock>
+                                        <TextBlock Text="{Binding Path=Price}"></TextBlock>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
                         </ListBox.Resources>
                     </ListBox>
+                </TabItem>
+                <TabItem Header="Payroll" FontSize="20" DataContext="{Binding Path= CalculationModule,Source={StaticResource ViewModelLocator}}">
+
                 </TabItem>
             </TabControl>
         </Grid>

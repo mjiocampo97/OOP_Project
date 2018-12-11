@@ -14,10 +14,14 @@ namespace OOP_Project.ViewModelLocator
             PersonModule = new PersonModule();
 
             ProductModule = new ProductModule();
+
+            CalculationModule = new CalculationModule();
         }
 
         public PersonModule PersonModule { get; set; }
 
         public ProductModule ProductModule { get; set; }
+
+        public CalculationModule CalculationModule { get; set; }
     }
 }
