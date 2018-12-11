@@ -8,17 +8,13 @@ using GalaSoft.MvvmLight;
 namespace OOP_Project.Classes
 {
    public class Calculation : ObservableObject
-    {
+   {
 
-
-        public void GetAge()
-        {
-
-        }
-
+       
+      
         public void GetInterest()
         {
-
+            
         }
 
         public void GetAccruedAmount()

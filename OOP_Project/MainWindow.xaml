@@ -34,6 +34,7 @@
                                 <StackPanel>
                                     <StackPanel>
                                         <TextBlock Text="{Binding Path=FirstName}" Padding=" 3,0" FontWeight="Bold" Foreground="DarkRed" FontFamily="Cooper Black" Width="100" HorizontalAlignment="Center"></TextBlock>
+                                        <TextBlock Text="{Binding Path=Age, StringFormat={}{0:0} Years Old}"></TextBlock>
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
@@ -84,32 +85,32 @@
                                     <StackPanel Width="150">
                                         <StackPanel>
                                             <TextBlock Text="{Binding Path=Name}"  FontWeight="Heavy" FontSize="15" FontStyle="Italic"></TextBlock>
-                                            <TextBlock Text="{Binding Path=Price}"></TextBlock>
+                                            <TextBlock Text="{Binding Path=Price, StringFormat={}₱{0}}"></TextBlock>
                                         </StackPanel>
                                     </StackPanel>
                                 </Border>
                             </DataTemplate>
                             <DataTemplate DataType="{x:Type model:Bracelets}">
                                 <Border BorderBrush="OrangeRed" BorderThickness="4" CornerRadius="2" SnapsToDevicePixels="True" Margin="5" Background="LightCoral">
-                                    <StackPanel Width="170">
+                                    <StackPanel Width="150">
                                         <TextBlock Text="{Binding Path=Name}"  FontWeight="Heavy" FontSize="15" FontStyle="Italic"></TextBlock>
-                                        <TextBlock Text="{Binding Path=Price}"></TextBlock>
+                                        <TextBlock Text="{Binding Path=Price, StringFormat={}₱{0}}"></TextBlock>
                                     </StackPanel>
                                 </Border>
                             </DataTemplate>
                             <DataTemplate DataType="{x:Type model:Earrings}">
                                 <Border BorderBrush="Violet" Background="Lavender" BorderThickness="4" CornerRadius="2" SnapsToDevicePixels="True" Margin="5">
-                                    <StackPanel>
+                                    <StackPanel Width="150">
                                         <TextBlock Text="{Binding Path=Name}"  FontWeight="Heavy" FontSize="15" FontStyle="Italic"></TextBlock>
-                                        <TextBlock Text="{Binding Path=Price}"></TextBlock>
+                                        <TextBlock Text="{Binding Path=Price, StringFormat={}₱{0}}"></TextBlock>
                                     </StackPanel>
                                 </Border>
                             </DataTemplate>
                             <DataTemplate DataType="{x:Type model:Rings}">
                                 <Border BorderBrush="Gold" BorderThickness="4" CornerRadius="4" SnapsToDevicePixels="True" Margin="5" Background="Khaki">
-                                    <StackPanel Width="170">
+                                    <StackPanel Width="150">
                                         <TextBlock Text="{Binding Path=Name}"  FontWeight="Heavy" FontSize="15" FontStyle="Italic"></TextBlock>
-                                        <TextBlock Text="{Binding Path=Price}"></TextBlock>
+                                        <TextBlock Text="{Binding Path=Price, StringFormat={}₱{0}}"></TextBlock>
                                     </StackPanel>
                                 </Border>
                             </DataTemplate>
