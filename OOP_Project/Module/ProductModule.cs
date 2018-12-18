@@ -91,7 +91,7 @@ namespace OOP_Project.Module
             _view?.SortDescriptions.Add(new SortDescription("ProductType", ListSortDirection.Ascending));
         }
 
-        public ICommand ResetVieCommand => new RelayCommand(ResetViewProc);
+        public ICommand ResetViewCommand => new RelayCommand(ResetViewProc);
         private void ResetViewProc()
         {
             _view.Filter = Reset;
@@ -130,21 +130,64 @@ namespace OOP_Project.Module
 
         private void ViewNecklaceProc()
         {
-            throw new NotImplementedException();
+            _view.Filter = FilterNecklace;
+            CurrentlyOnBracelets = false;
+            CurrenlyOnNeklace = true;
+            CurrentlyOnRings = false;
+            CurrentlyOnEarrings = false;
         }
-
+        private bool FilterNecklace(object o)
+        {
+            if (o is Necklace)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public ICommand ViewEarringsCommand => new RelayCommand(ViewEarringsProc);
 
         private void ViewEarringsProc()
         {
-            throw new NotImplementedException();
+            _view.Filter = FilterEarrings;
+            CurrentlyOnBracelets = false;
+            CurrenlyOnNeklace = false;
+            CurrentlyOnRings = false;
+            CurrentlyOnEarrings = true;
         }
-
+        private bool FilterEarrings(object o)
+        {
+            if (o is Earrings)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public ICommand ViewRingsCommand => new RelayCommand(ViewRingsProc);
 
         private void ViewRingsProc()
         {
-            throw new NotImplementedException();
+            _view.Filter = FilterRings;
+            CurrentlyOnBracelets = false;
+            CurrenlyOnNeklace = false;
+            CurrentlyOnRings = true;
+            CurrentlyOnEarrings = false;
+        }
+        private bool FilterRings(object o)
+        {
+            if (o is Rings)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

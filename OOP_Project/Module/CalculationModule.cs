@@ -1,9 +1,17 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using System.Xml.Linq;
+using ExcelDataReader;
+using GalaSoft.MvvmLight.CommandWpf;
+using Microsoft.Win32;
 using OOP_Project.Classes;
 
 namespace OOP_Project.Module
@@ -19,6 +27,7 @@ namespace OOP_Project.Module
         {
             GetList();
             GetIncomeTax();
+            ExcelToDataTable();
         }
         
         private void GetList()
@@ -60,6 +69,47 @@ namespace OOP_Project.Module
                     TaxRate = 0.35;
                 }
             }
+        }
+
+       // public ICommand OpenExcelCommand = new RelayCommand(OpenExcelProc);
+        public void CalculateSalary()
+        {
+
+        }
+
+        public void CalculateTaxDeduction()
+        {
+
+        }
+
+        public void CalculateSSSDeduction()
+        {
+
+        }
+
+        public void CalculatePhilHealthDeduction()
+        {
+
+        }
+
+        public void PagIbigDeduction()
+        {
+
+        }
+
+        public void CalculateNetPay()
+        {
+
+        }
+        private static void OpenExcelProc(string filePath)
+        {
+            FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
+        }
+
+        public ICommand OpenExcel => new RelayCommand(ExcelToDataTable);
+        public static void ExcelToDataTable()
+        {
+          
         }
 
     }
